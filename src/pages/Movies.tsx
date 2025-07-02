@@ -16,7 +16,8 @@ interface Movie {
 
 const Movies = () => {
   const SHEET_URL =
-    "https://api.sheetbest.com/sheets/7e4985fe-430a-47f0-b328-394bd58af9c7"
+    "https://script.google.com/macros/s/AKfycbzO53FfgLV-2Kq5pP0fYF7yjFw1CQlZkZoc5TEIn3rDcPSxv8MB8koOasYlf6BuXXCQ/exec"
+    
   const [allMovies, setAllMovies] = useState<Movie[]>([])
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([])
   const [filters, setFilters] = useState({
@@ -91,12 +92,8 @@ const Movies = () => {
 
   return (
     <>
-      <a href="/" className="home-button">
-        🏠 Home
-      </a>
-      <button id="theme-toggle" onClick={handleThemeToggle}>
-        🌙
-      </button>
+      <a href="/" className="home-button">🏠 Home</a>
+      <button id="theme-toggle" onClick={handleThemeToggle}>🌙</button>
       <a
         href="https://wa.me/91817596960"
         className="whatsapp-float"
