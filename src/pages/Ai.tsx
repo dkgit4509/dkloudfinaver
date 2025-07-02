@@ -32,38 +32,27 @@ const Ai = () => {
 
   const copyPrompt = (text: string) => {
     navigator.clipboard.writeText(text);
-    alert("Prompt copied!");
+    alert("✅ Prompt copied!");
   };
 
   return (
-    <>
-      <a href="/" className="home-button">🏠 Home</a>
-      <h1>🤖 AI Tools & Prompts</h1>
-      <p>Explore curated AI use cases and copy prompts directly</p>
+    <div className="p-4">
+      <a href="/" className="home-button">
+        🏠 Home
+      </a>
+      <h1 className="text-2xl font-bold my-4">🤖 AI Tools & Prompts</h1>
+      <p className="mb-4">Explore AI use cases and copy prompts directly from the list.</p>
 
       <input
         type="text"
-        placeholder="🔍 Search topic"
+        placeholder="🔍 Search by topic"
+        className="border border-gray-300 p-2 w-full max-w-md rounded-md mb-6"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className="ai-grid">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredTools.map((tool, idx) => (
-          <div key={idx} className="card">
-            <h3>{tool.Topic}</h3>
-            <p><strong>Category:</strong> {tool.Category || "General"}</p>
-            <p><strong>Use Case:</strong> {tool.UseCase || "N/A"}</p>
-            <p><strong>Prompt:</strong> {tool.Prompt || "N/A"}</p>
-            <p><strong>DK Tip:</strong> {tool.DKTip || "—"}</p>
-            <button onClick={() => copyPrompt(tool.Prompt || "")}>
-              📋 Copy Prompt
-            </button>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
-
-export default Ai;
+          <div
+            key={idx}
+            className="bg-white dark:bg-zinc-900 p-4 rounded-lg s
